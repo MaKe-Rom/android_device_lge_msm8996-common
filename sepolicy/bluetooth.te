@@ -2,3 +2,8 @@ rw_dir_file(bluetooth, sysfs)
 rw_dir_file(bluetooth, sysfs_bluetooth_writable)
 
 allow bluetooth sysfs:file w_file_perms;
+allow bluetooth bg_boot_complete_prop:file read;
+allow bluetooth bg_daemon_prop:file read;
+allow bluetooth bootloader_boot_reason_prop:file read;
+allow bluetooth boottime_prop:file read;
+allow bluetooth cnd_vendor_prop:file read;
