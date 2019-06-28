@@ -31,3 +31,6 @@ allow untrusted_app_27 apk_data_file:file setattr;
 allow untrusted_app_27 proc_version:file read;
 allow untrusted_app_27 vold_exec:file read;
 allow untrusted_app_27 proc_stat:file { open getattr };
+allow untrusted_app_27 ctl_atfwd_prop:file read;
+allow untrusted_app_27 proc:file { read open };
+allow untrusted_app_27 block_device:dir search;

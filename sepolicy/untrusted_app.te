@@ -47,3 +47,8 @@ allow untrusted_app ctl_vendor_port-bridge_prop:file read;
 allow untrusted_app ctl_vendor_port-bridge_prop:file read;
 allow untrusted_app ctl_vendor_qmuxd_prop:file read;
 allow untrusted_app ctl_vendor_rild_prop:file read;
+allow untrusted_app ctl_vendor_rmt_storage_prop:file read;
+allow untrusted_app ctl_vendor_wigigsvc_prop:file read;
+allow untrusted_app device_logging_prop:file read;
+allow untrusted_app diag_prop:file read;
+allow untrusted_app dumpstate_options_prop:file read;
