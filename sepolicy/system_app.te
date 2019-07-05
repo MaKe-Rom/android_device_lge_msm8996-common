@@ -10,3 +10,7 @@ allow system_app bg_daemon_prop:file read;
 allow system_app boottime_prop:file read;
 allow system_app proc_pagetypeinfo:file read;
 allow system_app ipa_dev:chr_file { read write };
+
+# Allow system_app to read and create files in cnd_core_data_file
+allow system_app cnd_core_data_file:dir w_dir_perms;
+allow system_app cnd_core_data_file:file create_file_perms;

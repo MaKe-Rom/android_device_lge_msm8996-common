@@ -109,4 +109,4 @@
 # vmstat
 /proc/vmstat                                                        u:object_r:proc_vmstat:s0
 # CND
-/data/connectivity(/.*)?              u:object_r:cnd_data_file:s0
+/data/connectivity(/.*)?                                            u:object_r:cnd_core_data_file:s0
