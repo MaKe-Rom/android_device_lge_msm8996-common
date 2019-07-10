@@ -40,7 +40,7 @@ on init
     write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 0
     write /sys/module/lpm_levels/parameters/sleep_disabled Y
 
-    # add a cpuset for the camera daemon
+    # Add a cpuset for the camera daemon
     # we want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-3
@@ -350,3 +350,9 @@ service vendor.radio-sh /vendor/bin/init.radio.sh
     user root
     group root radio
     oneshot
+
+on property:init.svc.media=restarting
+    restart vendor.qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart vendor.qcamerasvr

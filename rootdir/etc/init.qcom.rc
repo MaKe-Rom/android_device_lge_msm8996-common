@@ -286,6 +286,10 @@ on post-fs-data
     # Create folder of camera
     mkdir /data/vendor/camera 0770 camera camera
 
+    # Create folder for mm-qcamera-daemon
+    mkdir /data/media 0770 media_rw media_rw
+    chown media_rw media_rw /data/media
+
     # Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
 
@@ -566,6 +570,7 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
+    restart vendor.camera-provider-2-4
     start qcom-c_main-sh
     start wcnss-service
 
